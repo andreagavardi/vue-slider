@@ -25,19 +25,27 @@ const app = new Vue({
     },
     methods:{
         prev(){
-            console.log('cliccato su prev');
+            
             if(this.counter == 0){
                 return this.counter = this.images.length - 1;
             }
             return this.counter -= 1;
         },
         next(){
-            console.log('cliccato su next');
+            
             if(this.counter == this.images.length - 1){
                 return this.counter = 0;
             }
             return this.counter +=1;
 
+        },
+        keyboardEvent(e){
+            if(e.keyCode === 37){
+                console.log('hai schiacciato');
+                return this.counter -= 1;
+            }else if(e.keyCode === 39){
+               return this.counter += 1;
+            }
         }
          
        
@@ -45,7 +53,7 @@ const app = new Vue({
     }
 });
 
-document.addEventListener("keyup", function(event){
+/* document.addEventListener("keyup", function(event){
             var keyPressed = event.key;
             if(keyPressed== "ArrowRight"){
                 console.log("hai cliccato destra");
@@ -56,7 +64,7 @@ document.addEventListener("keyup", function(event){
                 
             }
 })
-    
+     */
    
 
 
