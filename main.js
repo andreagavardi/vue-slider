@@ -38,18 +38,19 @@ const app = new Vue({
             }
             return this.counter +=1;
 
-        },
-        keyboardEvent(e){
-            if(e.keyCode === 37){
-                console.log('hai schiacciato');
-                return this.counter -= 1;
-            }else if(e.keyCode === 39){
-               return this.counter += 1;
-            }
-        }
-         
-       
-   
+        }    
+          
+    },
+    mounted(){
+            document.addEventListener('keyup', (event) =>{
+                if(event.key === "ArrowLeft"){
+                    this.prev();
+                }else if (event.key === "ArrowRight"){
+                    this.next()
+                }
+                
+            })
+
     }
 });
 
