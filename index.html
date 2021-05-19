@@ -22,7 +22,7 @@
 
         </div>
         <div class="buttons-slider">
-        <i v-for="image in images" class="far fa-circle"></i>
+        <i @click="selectImage(index)" v-bind:class="counter==index ? 'active': ''" v-for="(image,index) in images" class="far fa-circle"></i>
         </div>
 
     </div>

@@ -14,13 +14,14 @@ Come sempre è importante usare la documentazione di Vuejs per scoprire/rinfresc
 const app = new Vue({
     el:"#app",
     data:{
-        counter:0,
+        counter:2,
         images:[
             "https://ilbolive.unipd.it/sites/default/files/2019-08/adobestock_231409227.jpg",
             "https://www.positanonews.it/photogallery_new/images/2010/11/sistema-solare-jpg-101095.660x368.jpg",
             "https://cdn.rtl.it/RTLFM/News/Article/600x600/universo-in-forte-espansione-creata-una-gigantesca-mappa-in-2d-per-studiare-laenergia-oscura-square-site-qr0tm.jpg",
             "https://cdnit1.img.sputniknews.com/img/475/55/4755573_0:24:1920:1062_1000x541_80_0_0_38d340ba32441c96f83d4c6ca8491eac.jpg"
-        ]
+        ],
+        
 
     },
     methods:{
@@ -38,7 +39,10 @@ const app = new Vue({
             }
             return this.counter +=1;
 
-        }    
+        },
+       selectImage(index){
+           return this.counter = index
+       }
           
     },
     mounted(){
@@ -49,23 +53,10 @@ const app = new Vue({
                     this.next()
                 }
                 
-            })
+            }),
+            setInterval(this.next,3000)
+            
 
     }
 });
-
-/* document.addEventListener("keyup", function(event){
-            var keyPressed = event.key;
-            if(keyPressed== "ArrowRight"){
-                console.log("hai cliccato destra");
-                
-            
-            }else if(keyPressed == "ArrowLeft"){
-                console.log("hai cliccato sinistra");
-                
-            }
-})
-     */
-   
-
 
